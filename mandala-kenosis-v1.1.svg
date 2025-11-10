@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="-400 -400 800 800" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Background -->
+  <rect x="-400" y="-400" width="800" height="800" fill="#fafafa"/>
+
+  <!-- Outer circle -->
+  <circle cx="0" cy="0" r="360" fill="none" stroke="#222" stroke-width="2"/>
+
+  <!-- Quadrant background fills (subtle) -->
+  <path d="M 0 -360 A 360 360 0 0 1 360 0 L 0 0 Z" fill="#e6e6ff" opacity="0.3"/> <!-- Soul -->
+  <path d="M 360 0 A 360 360 0 0 1 0 360 L 0 0 Z" fill="#e6ffe6" opacity="0.3"/> <!-- Feeling -->
+  <path d="M 0 360 A 360 360 0 0 1 -360 0 L 0 0 Z" fill="#fff0e6" opacity="0.3"/> <!-- Nature -->
+  <path d="M -360 0 A 360 360 0 0 1 0 -360 L 0 0 Z" fill="#f0e6ff" opacity="0.3"/> <!-- World -->
+
+  <!-- Quadrant labels -->
+  <text x="0" y="-300" font-family="Georgia, serif" font-size="36" text-anchor="middle" fill="#333">Soul</text>
+  <text x="300" y="0" font-family="Georgia, serif" font-size="36" text-anchor="middle" fill="#333" transform="rotate(90 300 0)">Feeling</text>
+  <text x="0" y="340" font-family="Georgia, serif" font-size="36" text-anchor="middle" fill="#333">Nature</text>
+  <text x="-300" y="0" font-family="Georgia, serif" font-size="36" text-anchor="middle" fill="#333" transform="rotate(-90 -300 0)">World</text>
+
+  <!-- Edge paths (clockwise symbolic: indigo, counterclockwise practical: amber) -->
+  <!-- Clockwise arrows -->
+  <path d="M 0 -254 L 254 0" stroke="#4b0082" stroke-width="4" marker-end="url(#arrow-indigo)"/>
+  <path d="M 254 0 L 0 254" stroke="#4b0082" stroke-width="4" marker-end="url(#arrow-indigo)"/>
+  <path d="M 0 254 L -254 0" stroke="#4b0082" stroke-width="4" marker-end="url(#arrow-indigo)"/>
+  <path d="M -254 0 L 0 -254" stroke="#4b0082" stroke-width="4" marker-end="url(#arrow-indigo)"/>
+
+  <!-- Counterclockwise arrows -->
+  <path d="M 0 -254 L -254 0" stroke="#b87333" stroke-width="4" marker-end="url(#arrow-amber)"/>
+  <path d="M -254 0 L 0 254" stroke="#b87333" stroke-width="4" marker-end="url(#arrow-amber)"/>
+  <path d="M 0 254 L 254 0" stroke="#b87333" stroke-width="4" marker-end="url(#arrow-amber)"/>
+  <path d="M 254 0 L 0 -254" stroke="#b87333" stroke-width="4" marker-end="url(#arrow-amber)"/>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-indigo" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4b0082"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#b87333"/>
+    </marker>
+  </defs>
+
+  <!-- Eight function labels on the edges -->
+  <text x="180" y="-90" font-family="Georgia, serif" font-size="20" fill="#4b0082">Ni</text>
+  <text x="230" y="100" font-family="Georgia, serif" font-size="20" fill="#4b0082" transform="rotate(45 230 100)">Fe</text>
+  <text x="-90" y="240" font-family="Georgia, serif" font-size="20" fill="#4b0082" transform="rotate(90 -90 240)">Te</text>
+  <text x="-280" y="100" font-family="Georgia, serif" font-size="20" fill="#4b0082" transform="rotate(135 -280 100)">Si</text>
+
+  <text x="-180" y="-90" font-family="Georgia, serif" font-size="20" fill="#b87333">Si</text>
+  <text x="-230" y="100" font-family="Georgia, serif" font-size="20" fill="#b87333" transform="rotate(-45 -230 100)">Te</text>
+  <text x="90" y="240" font-family="Georgia, serif" font-size="20" fill="#b87333" transform="rotate(-90 90 240)">Fe</text>
+  <text x="280" y="100" font-family="Georgia, serif" font-size="20" fill="#b87333" transform="rotate(-135 280 100)">Ni</text>
+
+  <!-- Central cross (the point that is also the intersection) -->
+  <g stroke="#222" stroke-width="3">
+    <line x1="-40" y1="0" x2="40" y2="0"/>
+    <line x1="0" y1="-40" x2="0" y2="40"/>
+  </g>
+  <circle cx="0" cy="0" r="8" fill="#222"/>
+
+  <!-- Kenosis caption -->
+  <text x="0" y="60" font-family="Georgia, serif" font-size="24" text-anchor="middle" fill="#222" font-style="italic">
+    The shortest distance is the intersection.
+  </text>
+  <text x="0" y="90" font-family="Georgia, serif" font-size="24" text-anchor="middle" fill="#222" font-style="italic">
+    The wound is the womb.
+  </text>
+
+  <!-- Footer -->
+  <text x="0" y="380" font-family="Georgia, serif" font-size="18" text-anchor="middle" fill="#555">
+    David’s Jungian rewrite + onto-epistemic kenosis, 2025
+  </text>
+  <text x="0" y="405" font-family="Georgia, serif" font-size="14" text-anchor="middle" fill="#777">
+    v1.1-kenosis — @michellergrim
+  </text>
+
+</svg>
