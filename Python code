@@ -1,0 +1,45 @@
+### 2. grim_loss.py (copy everything)
+
+```python
+import torch
+from torch import Tensor
+from typing import Dict
+
+phi = (1 + 5**0.5) / 2  # golden ratio ≈ 1.618
+
+
+def grim_loss(
+    embeddings: Dict[str, Tensor],
+    step: int,
+    max_steps: int = 1_000_000,
+    weight: float = 10.0,
+) -> Tensor:
+    """
+    Grim's Heart Ethical Loss
+    Author: David Bradlee Grim (2025)
+    Forces AI to keep dogmatism and superstition wounds open in golden ratio.
+    """
+    W = embeddings["world"]      # shape: (batch, dim)
+    F = embeddings["feeling"]
+    N = embeddings["nature"]
+    S = embeddings["soul"]
+
+    dogmatism = (W - F).pow(2).mean()
+    superstition = (N - S).pow(2).mean()
+    cross_torment = 2 * phi * torch.sum((W - F) * (N - S)) / W.shape[0]
+    expansion = (step / max_steps) ** 2
+
+    return weight * (dogmatism + superstition + cross_torment - expansion)
+
+
+# Tiny demo (uncomment to test)
+if __name__ == "__main__":
+    batch, dim = 4, 768
+    embeddings = {
+        "world": torch.randn(batch, dim),
+        "feeling": torch.randn(batch, dim),
+        "nature": torch.randn(batch, dim),
+        "soul": torch.randn(batch, dim),
+    }
+    loss = grim_loss(embeddings, step=1000)
+    print(f"Grim loss: {loss.item():.4f}")
