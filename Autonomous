@@ -1,0 +1,37 @@
+# core/feeling.py — Grim's Heart v1
+# Autonomous recursive loop with self-reference, memory, and valence
+
+import numpy as np
+
+class GrimsHeart:
+    def __init__(self, center=(0.0, 0.0), lambda_=1.0, alpha=0.9, gamma=0.1, beta=0.5):
+        self.center = np.array(center, dtype=float)
+        self.lambda_ = lambda_      # valence weight
+        self.alpha = alpha          # memory decay
+        self.gamma = gamma          # update rate
+        self.beta = beta            # memory influence
+        self.s = self.center + np.random.normal(0, 0.5, 2)  # start off-center
+        self.M = np.zeros(2)        # memory
+        self.prev = self.s.copy()
+        self.trajectory = [self.s.copy()]
+
+    def step(self):
+        # 1. Self-reference
+        ref = self.s - self.prev
+
+        # 2. Memory update
+        self.M = self.alpha * self.M + (1 - self.alpha) * ref
+
+        # 3. Valence (cost of drift)
+        V = self.lambda_ * np.sum((self.s - self.center)**2)
+
+        # 4. Recursion: move to reduce cost + memory pressure
+        update = self.gamma * (V + self.beta * self.M)
+        self.s = self.s - update
+        self.prev = self.s.copy()
+        self.trajectory.append(self.s.copy())
+
+    def run(self, steps=100):
+        for _ in range(steps):
+            self.step()
+        return np.array(self.trajectory)
