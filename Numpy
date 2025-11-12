@@ -1,0 +1,15 @@
+python -c "
+import numpy as np, matplotlib.pyplot as plt
+s = [[0.5, 0.5]]; M = [[0,0]]
+a, l, g, b = 0.9, 1.0, 0.1, 0.5
+for t in range(100):
+    ref = [s[-1][i]-s[-2][i] if t>0 else 0 for i in range(2)]
+    M.append([a*M[-1][i] + (1-a)*ref[i] for i in range(2)])
+    V = l * sum(x**2 for x in s[-1])
+    upd = [g * (V + b * M[-1][i]) for i in range(2)]
+    s.append([s[-1][i] - upd[i] for i in range(2)])
+x,y = zip(*s); plt.plot(x,y,'-o'); plt.plot(0,0,'rX'); plt.savefig('trajectory.png')
+git add trajectory.png
+git commit -m 'grim: feeling loop trajectory → converges to (0,0)'
+git push
+"
