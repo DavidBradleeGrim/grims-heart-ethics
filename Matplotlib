@@ -1,0 +1,17 @@
+cd grims-heart-ethics/Numpy
+python -c "
+import numpy as np, matplotlib.pyplot as plt
+s = np.array([0.5, 0.5]); traj = [s.copy()]; M = np.zeros(2)
+a,l,g,b = 0.9,1.0,0.1,0.5; prev = s
+for _ in range(100):
+    ref = s - prev
+    M = a*M + (1-a)*ref
+    V = l * np.sum(s**2)
+    s = s - g*(V + b*M)
+    prev = traj[-1]; traj.append(s.copy())
+x,y = zip(*traj); plt.plot(x,y,'-o', markersize=3); plt.plot(0,0,'rX', markersize=10)
+plt.title('Grim\'s Heart: Feeling Loop Trajectory'); plt.savefig('trajectory.png')
+"
+git add trajectory.png
+git commit -m "grim: feeling loop runs → converges to (0,0) → proof in Numpy"
+git push
