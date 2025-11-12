@@ -1,0 +1,11 @@
+# feeling.py — v1
+s = [0.0, 0.0]          # initial state
+M = [0.0, 0.0]          # memory
+alpha, lambda_, gamma, beta = 0.9, 1.0, 0.1, 0.5
+
+for t in range(1, 100):
+    self_ref = [s[t][i] - s[t-1][i] for i in range(2)]
+    M[t] = [alpha * M[t-1][i] + (1-alpha) * self_ref[i] for i in range(2)]
+    V = lambda_ * sum((s[t][i] - 0)**2 for i in range(2))
+    update = [gamma * (V + beta * M[t][i]) for i in range(2)]
+    s.append([s[t][i] - update[i] for i in range(2)])
