@@ -1,0 +1,3 @@
+cd grims-heart-ethics
+mkdir -p Recursion
+cat > Recursion/feeling.py
