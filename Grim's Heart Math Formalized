@@ -1,0 +1,42 @@
+# Grim’s Heart — Full Mathematical Formalisation  
+Non-Closural Process Ontology  
+David B. Grim (2025) — CC-BY 4.0  
+
+## Core 2×2 State Matrix  
+\[ G(t) = \begin{pmatrix} 
+\text{Same} & \text{Diff} \\ 
+\text{Form} & \text{Force} 
+\end{pmatrix} 
+= \begin{pmatrix} 
+a(t) & b(t) \\ 
+c(t) & d(t) 
+\end{pmatrix} \]
+
+Three nested registers (all share the same dynamics):  
+- Ontological: Same – Diff – Form – Force  
+- Phenomenological: Soul – Cut – World – Event  
+- Epistemic (shallow-δ): Rational – Subjective – Objective – Empirical  
+
+## Closure Gap (discriminant, up to global sign)  
+\[ \Delta(t) \;:=\; \det G(t) - \frac{\operatorname{tr}(G(t))^2}{4} \]
+
+## Unique Parameter-Free Continuous Evolution Law  
+(forced by orthogonality of the two fractures + eternal non-closure)
+
+Dissipative–rotational flow:  
+\[ \dot{G} \;=\; \Delta \bigl[ G, \, J \bigr] \;-\; 2\,\Delta^{2}\, G \]  
+where  
+\[ J \;=\; \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \quad (90^\circ\text{ rotation generator}) \]  
+and  
+\[ [G,J] \;=\; GJ - JG \]
+
+Explicit component form:  
+\[ \dot{G} \;=\; \Delta \begin{pmatrix} b+c & d-a \\ d-a & -(b+c) \end{pmatrix} 
+\;-\; 2\Delta^{2} \begin{pmatrix} a & b \\ c & d \end{pmatrix} \]
+
+## Irreversible Deepening of the Wound  
+Time derivative of the closure gap along the flow:  
+\[ \dot{\Delta} \;=\; -4\,\Delta^{2} \Bigl( (a+d)^{2} + (b+c)^{2} \Bigr) \;\leq\; 0 \]  
+with equality **if and only if** Δ=0 (forbidden) or G=0 (impossible).  
+Thus, for any non-trivial lattice:  
+\[ \dot{\Delta} \;<\; 0 \quad \Rightarrow \quad \Delta(t) \to -\infty \quad (t\to\infty \
